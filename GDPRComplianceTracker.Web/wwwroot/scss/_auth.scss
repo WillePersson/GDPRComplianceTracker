@@ -1,0 +1,137 @@
+﻿@import 'variables';
+
+.auth-container {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    background: linear-gradient(135deg, $primary-color, $black);
+
+    .form-section {
+        width: 65%;
+        background: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+
+    .info-section {
+        width: 35%;
+        background: transparent;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem;
+        transition: all 0.5s ease;
+    }
+
+    .form-wrapper {
+        padding: $padding-lg;
+        border-radius: $border-radius;
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: $margin-md;
+            font-weight: 700;
+        }
+
+        .sub-text {
+            color: $text-light;
+            font-size: 1rem;
+            margin-bottom: $margin-md;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: $margin-md;
+
+            .social-btn {
+                background: $secondary-color;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: $secondary-dark;
+                }
+            }
+        }
+
+        .divider {
+            position: relative;
+            margin: 1.5rem 0;
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 40%;
+                height: 1px;
+                background: $border-color;
+            }
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
+
+            span {
+                background: $white;
+                padding: 0 1rem;
+                font-size: 0.9rem;
+                color: $text-light;
+            }
+        }
+
+        .form-input {
+            background: $secondary-color;
+            border: none;
+            width: 100%;
+            padding: $padding-sm;
+            margin-bottom: $margin-md;
+            border-radius: $small-radius;
+        }
+    }
+
+
+    .btn-primary {
+        width: 100%;
+        background-color: $primary-color;
+        color: $white;
+        padding: 0.75rem;
+        border: none;
+        border-radius: $small-radius;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+    }
+
+    .btn-secondary {
+        margin-top: 1rem;
+        background: $white;
+        color: $primary-color;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: $small-radius;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

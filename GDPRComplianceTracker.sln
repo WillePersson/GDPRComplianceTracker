@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDPRComplianceTracker.Web", "GDPRComplianceTracker.Web\GDPRComplianceTracker.Web.csproj", "{83C9AABB-7E57-423A-BA86-98A613CE106D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDPRComplianceTracker.Application", "GDPRComplianceTracker.Application\GDPRComplianceTracker.Application.csproj", "{0240580A-93B4-4071-8826-A266DCD75DC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDPRComplianceTracker.Domain", "GDPRComplianceTracker.Domain\GDPRComplianceTracker.Domain.csproj", "{CCF0A8C0-1276-4BDD-9609-FF7FF3795D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDPRComplianceTracker.Infrastructure", "GDPRComplianceTracker.Infrastructure\GDPRComplianceTracker.Infrastructure.csproj", "{0E6B361E-22CE-4540-9A91-8BEF568437E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83C9AABB-7E57-423A-BA86-98A613CE106D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C9AABB-7E57-423A-BA86-98A613CE106D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C9AABB-7E57-423A-BA86-98A613CE106D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C9AABB-7E57-423A-BA86-98A613CE106D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0240580A-93B4-4071-8826-A266DCD75DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0240580A-93B4-4071-8826-A266DCD75DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0240580A-93B4-4071-8826-A266DCD75DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0240580A-93B4-4071-8826-A266DCD75DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF0A8C0-1276-4BDD-9609-FF7FF3795D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF0A8C0-1276-4BDD-9609-FF7FF3795D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF0A8C0-1276-4BDD-9609-FF7FF3795D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF0A8C0-1276-4BDD-9609-FF7FF3795D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E6B361E-22CE-4540-9A91-8BEF568437E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E6B361E-22CE-4540-9A91-8BEF568437E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E6B361E-22CE-4540-9A91-8BEF568437E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E6B361E-22CE-4540-9A91-8BEF568437E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

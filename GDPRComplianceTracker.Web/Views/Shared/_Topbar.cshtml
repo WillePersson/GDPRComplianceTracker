@@ -1,0 +1,72 @@
+﻿@* _Topbar.cshtml *@
+<div class="topbar">
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<(string Label, string? Url)>;
+        var showHome = ViewData["ShowHome"] as bool? ?? true;
+    }
+
+    <div class="breadcrumbs">
+        @if (showHome)
+        {
+            <span class="crumb">
+                <a href="/">Home</a>
+            </span>
+        }
+
+        @if (breadcrumbs != null)
+        {
+            foreach (var crumb in breadcrumbs)
+            {
+                <i class="fa-solid fa-chevron-right"></i>
+                <span class="crumb">
+                    @if (!string.IsNullOrEmpty(crumb.Url))
+                    {
+                        <a href="@crumb.Url">@crumb.Label</a>
+                    }
+                    else
+                    {
+                        <span class="current">@crumb.Label</span>
+                    }
+                </span>
+            }
+        }
+    </div>
+
+
+    <div class="topbar-profile" id="topbarProfile">
+        <div class="profile-button">
+            <img src="https://i.pravatar.cc/150?u=@User.Identity.Name" class="profile-img" alt="Profile" />
+            <span class="profile-name">
+                @User.FindFirst("FirstName")?.Value @User.FindFirst("LastName")?.Value
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+        <div class="profile-dropdown" id="profileDropdown">
+            <a href="/Settings" class="dropdown-item">
+                <i class="fa-solid fa-gear"></i> Settings
+            </a>
+            <form method="post" asp-controller="Account" asp-action="Logout">
+                <button type="submit" class="dropdown-item">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const profile = document.getElementById("topbarProfile");
+
+        profile.querySelector(".profile-button").addEventListener("click", () => {
+            profile.classList.toggle("open");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!profile.contains(e.target)) {
+                profile.classList.remove("open");
+            }
+        });
+    });
+</script>

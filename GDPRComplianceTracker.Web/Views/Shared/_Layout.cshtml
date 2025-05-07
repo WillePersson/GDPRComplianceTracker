@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Priventra</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="layout-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+            <div class="sidebar-header">
+                <a href="/" class="brand-logo">
+                    <img src="~/img/output-onlinepngtools.png" alt="Priventra" />
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">GENERAL</div>
+                    <a href="/Home/Index" class="sidebar-link">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                    <a href="/DataActivities/Index" class="sidebar-link">
+                        <i class="fa-solid fa-folder"></i> GDPR Data
+                    </a>
+                @if (User.IsInRole("Admin"))
+                {
+                        <a href="/Admin/Index" class="sidebar-link">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> Admin
+                        </a>
+                }
+            </div>
+
+            <!-- Section: COMPANY -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">MY COMPANY</div>
+                    <a href="/Company/Users" class="sidebar-link"><i class="fa-solid fa-users"></i>User management</a>
+                    <a href="/Company/Security" class="sidebar-link"><i class="fa-solid fa-lock"></i>Security & access</a>
+                    <a href="/Company/Authentication" class="sidebar-link"><i class="fa-solid fa-key"></i>Authentication</a>
+                    <a href="/Company/Docs" class="sidebar-link"><i class="fa-solid fa-file-lines"></i>Document Management</a>
+            </div>
+            </div>
+
+
+            <div class="sidebar-footer">
+                <a href="/Settings" class="sidebar-link"><i class="fa-solid fa-gear"></i>Settings</a>
+                <a href="/Docs" class="sidebar-link"><i class="fa-solid fa-book"></i>Documentation</a>
+            </div>
+        </aside>
+
+
+        <main class="main-content">
+            <div class="content-container">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

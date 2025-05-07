@@ -1,0 +1,75 @@
+﻿@model GDPRComplianceTracker.Application.DTOs.Account.AuthViewModel
+
+<div class="auth-container">
+    <div class="form-section @(ViewBag.IsRegistering == true ? "move-left" : "")">
+        <div class="form-wrapper">
+            <h2>@(ViewBag.IsRegistering == true ? "Create your Account" : "Login to Priventra")</h2>
+
+                <p class="sub-text">Login using your social network</p>
+                <div class="social-buttons">
+                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                </div>
+
+                <div class="divider"><span>OR</span></div>
+
+            <form asp-action="@(ViewBag.IsRegistering == true ? "Register" : "Login")" method="post">
+                @if (ViewBag.IsRegistering == true)
+                {
+                    <!-- Register form fields -->
+                    <input asp-for="Register.CompanyName" placeholder="Company Name" class="form-input" />
+                    <input asp-for="Register.OrganizationNumber" placeholder="Organization Number" class="form-input" />
+                    <input asp-for="Register.Address" placeholder="Address" class="form-input" />
+                    <input asp-for="Register.FirstName" placeholder="First Name" class="form-input" />
+                    <input asp-for="Register.LastName" placeholder="Last Name" class="form-input" />
+                    <input asp-for="Register.Email" placeholder="Email" class="form-input" />
+                    <input asp-for="Register.Password" placeholder="Password" type="password" class="form-input" />
+                    <input asp-for="Register.ConfirmPassword" placeholder="Confirm Password" type="password" class="form-input" />
+                    <button type="submit" class="btn-primary">Register</button>
+                }
+                else
+                {
+                    <!-- Login form fields -->
+                    <input asp-for="Login.Email" placeholder="Email" class="form-input" />
+                    <input asp-for="Login.Password" placeholder="Password" type="password" class="form-input" />
+                    <div class="form-group-checkbox">
+                        <input asp-for="Login.RememberMe" type="checkbox" />
+                        <label asp-for="Login.RememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                }
+            </form>
+        </div>
+    </div>
+
+
+    <div class="info-section @(ViewBag.IsRegistering == true ? "move-right" : "")">
+        <div class="info-wrapper">
+            @if (ViewBag.IsRegistering == true)
+            {
+                <h2>Already have an account?</h2>
+                <p>Sign in to your dashboard.</p>
+                <button class="btn-secondary" id="switchToLogin">Login</button>
+            }
+            else
+            {
+                <h2>New here?</h2>
+                <p>Create your free Priventra account today.</p>
+                <button class="btn-secondary" id="switchToRegister">Sign Up</button>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('switchToRegister')?.addEventListener('click', function () {
+            window.location.href = '@Url.Action("Auth", "Account", new { isRegistering = true })';
+        });
+
+        document.getElementById('switchToLogin')?.addEventListener('click', function () {
+            window.location.href = '@Url.Action("Auth", "Account", new { isRegistering = false })';
+        });
+    </script>
+}

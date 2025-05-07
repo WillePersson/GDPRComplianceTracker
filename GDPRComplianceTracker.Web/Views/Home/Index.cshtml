@@ -1,0 +1,56 @@
+﻿@model GDPRComplianceTracker.Web.Models.Home.HomeViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@Html.Partial("_Topbar")
+<div class="dashboard-container">
+    <h2>
+        Welcome, @Model.FirstName @Model.LastName! <span class="material-icons">
+            waving_hand
+        </span>
+    </h2>
+    <p><strong>Company:</strong> @Model.CompanyName</p>
+    <p><strong>Organization Number:</strong> @Model.OrganizationNumber</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <span class="material-icons">assignment</span>
+            <h3>Total Activities</h3>
+            <p>4</p>
+        </div>
+        <div class="card">
+            <span class="material-icons">dns</span>
+            <h3>Systems</h3>
+            <p>2</p>
+        </div>
+        <div class="card">
+            <span class="material-icons">group</span>
+            <h3>Partners</h3>
+            <p>3</p>
+        </div>
+        <div class="card">
+            <span class="material-icons">update</span>
+            <h3>Last Updated</h3>
+            <p>Apr 25, 2025</p>
+        </div>
+        <div class="card">
+            <span class="material-icons">verified_user</span>
+            <h3>Compliance</h3>
+            <p>✔️ In Progress</p>
+        </div>
+    </div>
+
+    <h3>Quick Actions</h3>
+    <div class="quick-actions">
+        <a class="btn btn-primary" href="/DataActivities/Create">+ Add Activity</a>
+        <a class="btn btn-primary" href="/Systems/Create">+ Add System</a>
+        <a class="btn btn-primary" href="/Partners/Create">+ Add Partner</a>
+    </div>
+
+    <h3>Reminders</h3>
+    <ul class="reminders">
+        <li>⚡ Annual GDPR review due in 45 days</li>
+        <li>📌 Review contracts with partners</li>
+    </ul>
+</div>
