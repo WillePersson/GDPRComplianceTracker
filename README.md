@@ -13,7 +13,7 @@ This project was built to help organizations quickly generate legally compliant 
 
 ## 🔧 Tech Stack
 
-- **Backend:** .NET 7, Razor Pages, C#
+- **Backend:** .NET 9, Razor Pages, C#
 - **Frontend:** HTML, CSS, Razor
 - **PDF Generation:** DinkToPdf
 - **Storage:** In-memory (demo), can be extended to SQL Server
